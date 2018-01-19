@@ -4,8 +4,10 @@ public class ExploreSuppliers {
 
     public static void main(String[] args) {
         SuppliersProvider suppliersProvider = new SuppliersProvider();
-        // only value1 should be created in this case
-        Value value1 = suppliersProvider.provideOfInstance().get("k1").get();
+
+        // we want a way so that only value1 is created
+        //Value value1 = suppliersProvider.provideOfInstance().get("k1").get();
+        Value value1 = suppliersProvider.provideOfMemoize().get("k1").get();
         System.out.println(value1);
     }
 
